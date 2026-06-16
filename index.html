@@ -4,106 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitácora Tecnología C Aguilar</title>
-    <link rel="icon" type"imagen/png" href="recursos/img/lgcapou.png">
+    <link rel="icon" type="image/png" href="recursos/img/lgcapou.png">
     <style>
-        html,body{
-        height: 100%;
-        margin: 0;
-        font-family: Arial, sans-serif;
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
         } 
-        body{
+        body {
             display: flex;
             flex-direction: column;
             text-align: center;
             background: linear-gradient(135deg, #323295, #171775, #000000);
         }
-        header{
+        header {
             padding: 20px;
             background-color: rgb(42, 64, 105);
         }
-        h1{
-    color: rgb(255, 255, 255); 
-    text-shadow:
-        0 0 5px #a020f0,
-        0 0 10px #a020f0,
-        0 0 20px #a020f0,
-        0 0 40px #8000ff,
-        0 0 80px #8000ff;
+        h1 {
+            color: rgb(255, 255, 255); 
+            text-shadow:
+                0 0 5px #a020f0,
+                0 0 10px #a020f0,
+                0 0 20px #a020f0,
+                0 0 40px #8000ff,
+                0 0 80px #8000ff;
         }
-        .logo{
-    transition: transform 0.3s ease;
-    }
+        .logo {
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+        .semana {
+            background-color: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 800px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box; /* Evita que las tarjetas se salgan de la pantalla en móviles */
+        }
+        .semana:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: white;
+            animation: neonColors 3s infinite alternate;
+        }
 
-        .logo:hover{
-    transform: scale(1.1);
-    }
-    .semana{
-    background-color: white;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 15px;
-    max-width: 800px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.semana:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-}
-h1{
-    color: white;
-    animation: neonColors 3s infinite alternate;
-}
-
-
-@keyframes neonColors {
-    0% {
-        text-shadow:
-            0 0 5px #a020f0,
-            0 0 10px #a020f0,
-            0 0 20px #a020f0,
-            0 0 40px #8000ff;
-    }
-    25% {
-        text-shadow:
-            0 0 5px #ff00ff,
-            0 0 10px #ff00ff,
-            0 0 20px #ff00ff,
-            0 0 40px #ff00ff;
-    }
-    50% {
-        text-shadow:
-            0 0 5px #00ffff,
-            0 0 10px #00ffff,
-            0 0 20px #00ffff,
-            0 0 40px #00ffff;
-    }
-    75% {
-        text-shadow:
-            0 0 5px #00ff00,
-            0 0 10px #00ff00,
-            0 0 20px #00ff00,
-            0 0 40px #00ff00;
-    }
-    100% {
-        text-shadow:
-            0 0 5px #ff0000,
-            0 0 10px #ff0000,
-            0 0 20px #ff0000,
-            0 0 40px #ff0000;
-    }
-}
-        main{
+        @keyframes neonColors {
+            0% {
+                text-shadow:
+                    0 0 5px #a020f0,
+                    0 0 10px #a020f0,
+                    0 0 20px #a020f0,
+                    0 0 40px #8000ff;
+            }
+            25% {
+                text-shadow:
+                    0 0 5px #ff00ff,
+                    0 0 10px #ff00ff,
+                    0 0 20px #ff00ff,
+                    0 0 40px #ff00ff;
+            }
+            50% {
+                text-shadow:
+                    0 0 5px #00ffff,
+                    0 0 10px #00ffff,
+                    0 0 20px #00ffff,
+                    0 0 40px #00ffff;
+            }
+            75% {
+                text-shadow:
+                    0 0 5px #00ff00,
+                    0 0 10px #00ff00,
+                    0 0 20px #00ff00,
+                    0 0 40px #00ff00;
+            }
+            100% {
+                text-shadow:
+                    0 0 5px #ff0000,
+                    0 0 10px #ff0000,
+                    0 0 20px #ff0000,
+                    0 0 40px #ff0000;
+            }
+        }
+        main {
             flex: 1;
             padding: 20px;
             max-width: 1000px;
             margin: 0 auto;
-            
+            width: 100%;
+            box-sizing: border-box;
         }
         
+        /* Contenedor responsivo para el PDF integrado */
+        .pdf-container {
+            width: 100%;
+            height: 550px;
+            margin: 15px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+        }
         
-        footer{
+        footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -112,14 +121,15 @@ h1{
             background-color: rgb(126, 133, 175);
         }
         @media(max-width:600px){
-            footer{
+            footer {
                 flex-direction: column;
                 gap: 15px;
                 padding: 20px;
             }
-
+            .pdf-container {
+                height: 400px; /* Un poco más pequeño en pantallas móviles */
+            }
         }
-
     </style>
 </head>
 <body>
@@ -128,31 +138,34 @@ h1{
     </header>
     <main>
         <h4>Contenido de mi pagina web</h4>
+        
         <div class="semana">
-        <h3>Introducción</h3>
-    <a href="recursos/Introducción Arduino word Carmen A.pdf" target="_blank">
-        📄 Ver PDF
-    </a>
-        <p>Introducción a Arduino</p>
-    </div>
+            <h3>Introducción</h3>
+            <div class="pdf-container">
+                <embed src="recursos/Introducción Arduino word Carmen A.pdf" type="application/pdf" width="100%" height="100%" />
+            </div>
+            <p>Introducción a Arduino</p>
+        </div>
 
-    <div class="semana">
-        <h3>Introduccion a robotica</h3>
-        <p>Materiales utilizados: placa Arduino, cables jumper (cables de conexión), protoboard, resistencias, LEDs, computadora o laptop, editor de código Visual Studio Code, y conexión a internet para consultar información y realizar las prácticas.</p>
-        <video width="100%" height="300" controls>
-        <source src="recursos/img/Grabación 2026-05-12 120325.mp4" type="video/mp4">
-    </div>
-         <div class="semana">
-        <h3>Semana 3 - Circuito 1</h3>
-        <p>Práctica de Circuito 1 utilizando Arduino y componentes electrónicos básicos.</p>
-        <video width="100%" height="300" controls>
-            <source src="recursos/Circuito 1 Carmen A.mp4" type="video/mp4">
-        </video>
-    </div>
+        <div class="semana">
+            <h3>Introduccion a robotica</h3>
+            <p>Materiales utilizados: placa Arduino, cables jumper (cables de conexión), protoboard, resistencias, LEDs, computadora o laptop, editor de código Visual Studio Code, y conexión a internet para consultar información y realizar las prácticas.</p>
+            <video width="100%" height="300" controls>
+                <source src="recursos/img/Grabación 2026-05-12 120325.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <div class="semana">
+            <h3>Semana 3 - Circuito 1</h3>
+            <p>Práctica de Circuito 1 utilizando Arduino y componentes electrónicos básicos.</p>
+            <video width="100%" height="300" controls>
+                <source src="recursos/Circuito 1 Carmen A.mp4" type="video/mp4">
+            </video>
+        </div>
     </main>
     <footer>
         <span>2026 @carmsjks</span> 
-        <img class="logo" src="https://www.capouilliez.edu.gt/panel-alumnos/assets/img/brand/capouilliez.svg" alt="" width="100" height="100">
+        <img class="logo" src="https://www.capouilliez.edu.gt/panel-alumnos/assets/img/brand/capouilliez.svg" alt="Logo Capouilliez" width="100" height="100">
     </footer>
 </body>
 </html>
